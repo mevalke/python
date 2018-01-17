@@ -57,4 +57,17 @@ def my_method(input_number, divisor):
     return input_number / divisor
 print(my_method(8000,0))
 
+
+my_numbers = "1, 2, 3, 4, 5"
+splitted_numbers = my_numbers.split(",")
+print(splitted_numbers)
+splitted_numbers_as_int = []
+for i in splitted_numbers:
+    splitted_numbers_as_int.append(int(i))
+print(splitted_numbers_as_int)
+
+my_numbers = "1, 2, 3, 4, 5"
+splitted_numbers = my_numbers.split(",")
+print([int(number) for number in splitted_numbers])
+
 '''
