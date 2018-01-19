@@ -70,4 +70,18 @@ my_numbers = "1, 2, 3, 4, 5"
 splitted_numbers = my_numbers.split(",")
 print([int(number) for number in splitted_numbers])
 
+set_1 = {1,2,3,4,}
+set_2 = {3,4,5,6}
+print(set_1.intersection(set_2))
+
 '''
+
+def get_numbers():
+    number_csv = input("Enter your 6 digits, separated by commas: ")
+    splitted_numbers = number_csv.split(",")
+    return {int(number) for number in splitted_numbers}
+
+print(get_numbers())
+
+
+
