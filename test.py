@@ -1,3 +1,4 @@
+# coding=utf-8
 '''
 int1 = input("Syota luku 1: ")
 int2 = input("Syota luku 2: ")
