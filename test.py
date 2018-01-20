@@ -74,14 +74,26 @@ set_1 = {1,2,3,4,}
 set_2 = {3,4,5,6}
 print(set_1.intersection(set_2))
 
-'''
+import random
+
+def menu():
+    user_numbers = get_numbers()
+    random_numbers = create_lottery_numbers()
+    matched_numbers = user_numbers.intersection(random_numbers)
+    print("The winning numbers are: {}, you won {}".format(matched_numbers, 100 ** len(matched_numbers)))
 
 def get_numbers():
     number_csv = input("Enter your 6 digits, separated by commas: ")
     splitted_numbers = number_csv.split(",")
     return {int(number) for number in splitted_numbers}
 
-print(get_numbers())
+def create_lottery_numbers():
+    values = set()
+    while len(values) < 6:
+        values.add(random.randint(1,20))
+    return values
 
+print(menu())
 
+'''
 
