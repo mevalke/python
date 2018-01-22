@@ -96,5 +96,8 @@ def create_lottery_numbers():
 
 print(menu())
 
-'''
 
+dict_for_fun = { "my_name": "Miikka", "Age": 44 }
+print(dict_for_fun["my_name"])
+
+'''
