@@ -7,7 +7,7 @@ int3 = int(int1)+int(int2)
 print("Luvun "+str(int1)+" ja "+str(int2)+" summa on: " +str(int3))
 
 
-# Fahrenheit-konversio
+# Fahrenheit-konversio (round tekee pyöristyksen)
 temperature = input("Type the temperature: ")
 conversion = round(int(temperature)*9/5+32)
 
@@ -100,4 +100,41 @@ print(menu())
 dict_for_fun = { "my_name": "Miikka", "Age": 44 }
 print(dict_for_fun["my_name"])
 
+
+
+user_feed = input("Type three numbers: ")
+feed_transformed = [ str(i) for i in str(user_feed) ]
+my_var = ''
+
+for i in feed_transformed:
+    if i == '1':
+        my_var = my_var+'one '
+    elif i == '2':
+        my_var = my_var+'two '
+    elif i == '3':
+        my_var = my_var+'three '
+
+print(my_var)
+
 '''
+
+def my_calculation():
+    temperature = input("Type the temperature: ")
+    conversion = round(int(temperature)*9/5+32)
+
+    print("Temperature in Fahrenheit: "+str(conversion))
+
+def my_prompt():
+    answer = input("Do you want to run my_calculation: ")
+    if answer == "y":
+        return True
+    elif answer == "n":
+        return False
+
+if my_prompt():
+    my_calculation()
+elif not my_prompt():
+    print("Quitting...")
+else:
+    print("Type y or n!")
+    my_prompt()
