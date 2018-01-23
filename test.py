@@ -116,7 +116,7 @@ for i in feed_transformed:
 
 print(my_var)
 
-'''
+
 
 def my_calculation():
     temperature = input("Type the temperature: ")
@@ -131,10 +131,10 @@ def my_prompt():
     elif answer == "n":
         return False
 
-if my_prompt():
+while my_prompt():
     my_calculation()
-elif not my_prompt():
-    print("Quitting...")
-else:
-    print("Type y or n!")
-    my_prompt()
+
+'''
+
+
+
