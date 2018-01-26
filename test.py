@@ -1,5 +1,5 @@
 # coding=utf-8
-'''
+"""
 int1 = input("Syota luku 1: ")
 int2 = input("Syota luku 2: ")
 int3 = int(int1)+int(int2)
@@ -134,7 +134,30 @@ def my_prompt():
 while my_prompt():
     my_calculation()
 
-'''
+def add_user():
+    var_name = input("Type the name: ")
+    var_user = {
+        'name': var_name,
+        'marks': []
+    }
+    return var_user
 
+def append_mark(student, var_marks):
+    student['marks'].append(var_marks)
+
+def calculate_avg(student):
+    var_len_marks = len(student['marks'])
+    if var_len_marks == 0:
+        return 0
+    var_sum_marks = sum(student['marks'])
+    return var_sum_marks / var_len_marks
+
+s = add_user()
+print(calculate_avg(s))
+
+append_mark(s,5)
+print(calculate_avg(s))
+
+"""
 
 
