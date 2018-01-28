@@ -160,4 +160,14 @@ print(calculate_avg(s))
 
 """
 
+sudent_list = []
 
+def create_student():
+    student_name = input("Type student name: ")
+    student_data = {
+        'name': 'student_name',
+        'marks': []
+    }
+    return student_data
+
+def add_mark():
