@@ -160,14 +160,38 @@ print(calculate_avg(s))
 
 """
 
-sudent_list = []
+student_list = []
 
 def create_student():
     student_name = input("Type student name: ")
     student_data = {
-        'name': 'student_name',
+        'name': student_name,
         'marks': []
     }
     return student_data
 
-def add_mark():
+def add_mark(student, mark):
+    student['marks'].append(mark)
+
+def print_student_list():
+    for i, student in enumerate(student_list):
+        print("ID: {}, Name: {}, Marks: {}".format(i, student['name'],student['marks']))
+
+def modify_student():
+    s = create_student()
+    get_mark = input("Type the mark you wish to add: ")
+    add_mark(s, get_mark)
+    student_list.append(s)
+
+def menu():
+    answer = input("Please select an option, c - Create new user, a - Append mark, p - Print student list, q - Quit: ")
+    while answer != 'q':
+        if answer == 'c':
+            create_student()
+        elif answer == 'a':
+            add_mark()
+        elif answer == 'p':
+            print_student_list()
+        answer = input("Please select an option, c - Create new user, a - Append mark, p - Print student list, q - Quit: ")
+
+menu()
