@@ -173,25 +173,47 @@ def create_student():
 def add_mark(student, mark):
     student['marks'].append(mark)
 
-def print_student_list():
-    for i, student in enumerate(student_list):
-        print("ID: {}, Name: {}, Marks: {}".format(i, student['name'],student['marks']))
+def calculate_average_mark(student):
+    number_of_marks = len(student['marks'])
+    sum_or_marks = sum(student['marks'])
 
-def modify_student():
-    s = create_student()
-    get_mark = input("Type the mark you wish to add: ")
-    add_mark(s, get_mark)
-    student_list.append(s)
+    if number_of_marks == 0:
+        return 0
+
+    average_mark = sum_or_marks / number_of_marks
+    return average_mark
+
+def print_student_details(student):
+    print("Name: {}, Average: {}".format(student['name'],calculate_average_mark(student)))
+
+def print_student_list(students):
+    for i, student in enumerate(students):
+        print("ID: {}".format(i))
+        print_student_details(student)
 
 def menu():
-    answer = input("Please select an option, c - Create new user, a - Append mark, p - Print student list, q - Quit: ")
-    while answer != 'q':
-        if answer == 'c':
-            create_student()
-        elif answer == 'a':
-            add_mark()
-        elif answer == 'p':
-            print_student_list()
-        answer = input("Please select an option, c - Create new user, a - Append mark, p - Print student list, q - Quit: ")
+    selection = input("Enter 'p' to print the student list, "
+                      "'s' to add a new student, "
+                      "'a' to add a mark to a student, "
+                      "or 'q' to quit. "
+                      "Enter your selection: ")
+    while selection != 'q':
+        if selection == 'p':
+            print_student_list(student_list)
+        elif selection == 's':
+            student_list.append(create_student())
+        elif selection == 'a':
+            student_id = int(input("Enter the ID to add the mark to: "))
+            student = student_list[student_id]
+            new_mark = int(input("Enter the new mark to be added: "))
+            add_mark(student,new_mark)
+        selection = input("Enter 'p' to print the student list, "
+                          "'s' to add a new student, "
+                          "'a' to add a mark to a student, "
+                          "or 'q' to quit. "
+                          "Enter your selection: ")
 
 menu()
+
+
+
