@@ -134,86 +134,53 @@ def my_prompt():
 while my_prompt():
     my_calculation()
 
-def add_user():
-    var_name = input("Type the name: ")
-    var_user = {
-        'name': var_name,
-        'marks': []
-    }
-    return var_user
 
-def append_mark(student, var_marks):
-    student['marks'].append(var_marks)
 
-def calculate_avg(student):
-    var_len_marks = len(student['marks'])
-    if var_len_marks == 0:
-        return 0
-    var_sum_marks = sum(student['marks'])
-    return var_sum_marks / var_len_marks
 
-s = add_user()
-print(calculate_avg(s))
+import sys
 
-append_mark(s,5)
-print(calculate_avg(s))
+def k_menu():
+    print("Komioita kenkiä paikat pullollansa")
+    valinta = input("1. Paavalikko, q. Lopeta: ")
+    while True:
+        if valinta == '1':
+            p_menu()
+        elif valinta == 'q':
+            sys.exit(0)
+        else:
+            print("Valitse 1 tai q!")
+        valinta = input("1. Paavalikko, q. Lopeta")
+
+def t_menu():
+    print("Komioita takkeja paikat pullollansa")
+    valinta = input("1. Paavalikko, q. Lopeta: ")
+    while True:
+        if valinta == '1':
+            p_menu()
+        elif valinta == 'q':
+            sys.exit(0)
+        else:
+            print("Valitse 1 tai q!")
+        valinta = input("1. Paavalikko, q. Lopeta")
+
+def p_menu():
+    print("Mista olet kiinnostunut oi asiakas?")
+    valinta = input("1. Kengat, 2. Takit, 3. Housut, q. Lopeta: ")
+    while True:
+        if valinta == '1':
+            k_menu()
+        if valinta == '2':
+            t_menu()
+        elif valinta == 'q':
+            sys.exit(0)
+        else:
+            print("Valitse 1,2,3 tai q!")
+            valinta = input("1. Kengat, 2. Takit, 3. Housut, q. Lopeta: ")
+
+p_menu()
+
 
 """
-
-student_list = []
-
-def create_student():
-    student_name = input("Type student name: ")
-    student_data = {
-        'name': student_name,
-        'marks': []
-    }
-    return student_data
-
-def add_mark(student, mark):
-    student['marks'].append(mark)
-
-def calculate_average_mark(student):
-    number_of_marks = len(student['marks'])
-    sum_or_marks = sum(student['marks'])
-
-    if number_of_marks == 0:
-        return 0
-
-    average_mark = sum_or_marks / number_of_marks
-    return average_mark
-
-def print_student_details(student):
-    print("Name: {}, Average: {}".format(student['name'],calculate_average_mark(student)))
-
-def print_student_list(students):
-    for i, student in enumerate(students):
-        print("ID: {}".format(i))
-        print_student_details(student)
-
-def menu():
-    selection = input("Enter 'p' to print the student list, "
-                      "'s' to add a new student, "
-                      "'a' to add a mark to a student, "
-                      "or 'q' to quit. "
-                      "Enter your selection: ")
-    while selection != 'q':
-        if selection == 'p':
-            print_student_list(student_list)
-        elif selection == 's':
-            student_list.append(create_student())
-        elif selection == 'a':
-            student_id = int(input("Enter the ID to add the mark to: "))
-            student = student_list[student_id]
-            new_mark = int(input("Enter the new mark to be added: "))
-            add_mark(student,new_mark)
-        selection = input("Enter 'p' to print the student list, "
-                          "'s' to add a new student, "
-                          "'a' to add a mark to a student, "
-                          "or 'q' to quit. "
-                          "Enter your selection: ")
-
-menu()
 
 
 
