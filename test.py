@@ -237,5 +237,5 @@ print(j)
 
 
 my_prompt = input("Type string: ")
-splitted = my_prompt.split()
-print(splitted)
+prompt_as_list = list(my_prompt)
+print(prompt_as_list)
