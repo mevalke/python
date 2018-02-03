@@ -180,7 +180,62 @@ def p_menu():
 p_menu()
 
 
+
+# list-koulutehtäviä
+# Tulostaa listan suurimman luvun:
+a = 1
+the_list = [ 1,2,4,3]
+for i in the_list:
+    if i > a:
+        a = i
+print(a)
+
+# Kääntää listan
+old_list = [1,2,3,4,5]
+new_list = []
+
+for i in old_list:
+    new_list.insert(0, i)
+print(new_list)
+
+# Funktio, joka tarkistaa onko alkio listassa. Toimii muuten, mutta 'q' ei kelpaa whilessa, koska ei ole int
+#
+list_to_check = [2,3,4]
+def my_funcion(my_param):
+    for i in list_to_check:
+        if i == my_param:
+            return True
+
+my_prompt = int(input("Type a number: "))
+
+while my_prompt != 'q':
+    if my_funcion(my_prompt):
+        print("Found!")
+    else:
+        print("Not found!")
+    my_prompt = int(input("Type a number: "))
+
+
+# Tulosta listan joka toinen alkio
+my_list = [6,7,8,9,10,11,12]
+
+for i,j in enumerate(my_list):
+    i = 1
+    if j % 2 == 0:
+        print(j)
+
+# Laske alkioiden summa
+my_list = [2,3,4]
+j = 0
+for i in my_list:
+    j = j + i
+
+print(j)
+
 """
 
 
 
+my_prompt = input("Type string: ")
+splitted = my_prompt.split()
+print(splitted)
