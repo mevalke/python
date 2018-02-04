@@ -232,10 +232,37 @@ for i in my_list:
 
 print(j)
 
-"""
 
 
+# Tarkista, onko string palindromi, EI TOIMI!!!
+def process_len(list_param):
+    if len(list_param) % 2 != 0:                # Jos listan pituus on pariton
+        to_even = len(list_param) - 1           # vähennetään 1
+        return to_even / 2                      # ja palautetaan puolikas jäljellejäävästä
+    else:
+        return len(list_param) / 2              # Jos pituus on valmiiksi parillinen, jaetaan suoraan kahdella
+
+def extract_list_1(list_param, len_param):
+    return list_param[0:len_param]
+
+def extract_list_2(list_param, len_param):
+    list_to_return = list_param[len_param:]
+    list_to_return = list_to_return.reverse()   # Tämä ei toimi!!!
+    return list_to_return
 
 my_prompt = input("Type string: ")
 prompt_as_list = list(my_prompt)
-print(prompt_as_list)
+halfway = int(process_len(prompt_as_list))
+
+# Debugging
+print(halfway)
+print(str(extract_list_1(prompt_as_list,halfway)))
+print(str(extract_list_2(prompt_as_list,halfway)))
+
+if extract_list_1(prompt_as_list,halfway) == extract_list_2(prompt_as_list,halfway):
+    print("On palindromi!")
+else:
+    print("Ei ole palindromi!")
+
+"""
+
