@@ -190,7 +190,7 @@ for i in the_list:
         a = i
 print(a)
 
-# Kääntää listan
+# Kääntää listan, tässä käytetään instertiä hommaa helpottamaan:
 old_list = [1,2,3,4,5]
 new_list = []
 
@@ -198,7 +198,23 @@ for i in old_list:
     new_list.insert(0, i)
 print(new_list)
 
-# Funktio, joka tarkistaa onko alkio listassa. Toimii muuten, mutta 'q' ei kelpaa whilessa, koska ei ole int
+new_list = []
+
+# Oma toteutus reversestä, jossa ei käytetä valmiita methodeja
+prompt_for_list = input("Type the list content: ")
+the_list = list(prompt_for_list)
+the_len = len(the_list)
+
+while the_len != 0:
+    new_list.append(the_list[-1:])
+    del the_list[-1]
+    the_len = the_len - 1
+
+print(new_list)
+
+
+
+# Funktio, joka tarkistaa onko alkio listassa.
 #
 list_to_check = [2,3,4]
 def my_funcion(my_param):
@@ -206,14 +222,16 @@ def my_funcion(my_param):
         if i == my_param:
             return True
 
-my_prompt = int(input("Type a number: "))
+my_prompt = input("Type a number: ")
 
 while my_prompt != 'q':
+    my_prompt = int(my_prompt)
     if my_funcion(my_prompt):
         print("Found!")
     else:
         print("Not found!")
-    my_prompt = int(input("Type a number: "))
+    my_prompt = input("Type a number: ")
+
 
 
 # Tulosta listan joka toinen alkio
@@ -232,7 +250,10 @@ for i in my_list:
 
 print(j)
 
+# Edellinen fiksummin
+my_list = [1,2,3,4,5,6]
 
+print(my_list[::2])
 
 
 # Tarkista, onko string palindromi
@@ -265,17 +286,69 @@ if extract_list_1(prompt_as_list,halfway) == extract_list_2(prompt_as_list,halfw
 else:
     print("Ei ole palindromi!")
 
+
+# "sum" for loopilla
+my_list = input("Type the numbers: ")
+result = 0
+splitted_list = my_list.split(",")
+numbers_as_int = []
+
+for i in splitted_list:
+    numbers_as_int.append(int(i))
+
+for i in numbers_as_int:
+#    print(result)
+    result = result + i
+
+print("Result {}".format(result))
+
+
+
+# "sum" while loopilla
+temp_list = input("Type the numbers: ")
+splitted_list = temp_list.split(",")
+list_as_int = []
+list_len = len(splitted_list)
+result = 0
+i = 0
+
+while i != list_len:
+    list_as_int.append(int(splitted_list[i]))
+    i = i +1
+
+
+i = 0
+
+while i != list_len:
+    result = result + list_as_int[i]
+    i = i + 1
+
+print(result)
+
+
+# shift
+shift = input("How many chars to shift? ")
+shift = int(shift)
+
+my_list = [1,2,3,4,5,6]
+
+to_be_added = []
+
+for i in my_list[:shift]:
+    to_be_added.append(i)
+
+for i in to_be_added:
+    my_list.append(i)
+
+del my_list[:shift]
+
+print(my_list)
+
 """
 
-new_list = []
 
-prompt_for_list = input("Type the list content: ")
-the_list = list(prompt_for_list)
-the_len = len(the_list)
 
-while the_len != 0:
-    new_list.append(the_list[-1:])
-    del the_list[-1]
-    the_len = the_len - 1
 
-print(new_list)
+
+
+
