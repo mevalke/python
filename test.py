@@ -232,7 +232,7 @@ for i in my_list:
 
 print(j)
 
-"""
+
 
 
 # Tarkista, onko string palindromi
@@ -265,3 +265,17 @@ if extract_list_1(prompt_as_list,halfway) == extract_list_2(prompt_as_list,halfw
 else:
     print("Ei ole palindromi!")
 
+"""
+
+new_list = []
+
+prompt_for_list = input("Type the list content: ")
+the_list = list(prompt_for_list)
+the_len = len(the_list)
+
+while the_len != 0:
+    new_list.append(the_list[-1:])
+    del the_list[-1]
+    the_len = the_len - 1
+
+print(new_list)
