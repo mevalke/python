@@ -344,11 +344,63 @@ del my_list[:shift]
 
 print(my_list)
 
+# Tehtävä 14: https://sites.google.com/site/vaoohjelmointi/home/harjoitukset-ii
+# Tulostetaan funktion argumentit kehykseen
+def kyltintekija(*args):
+    mitta = int(0)
+    for i in args:
+        if len(i) > mitta:
+            mitta = len(i)
+    mitta = mitta+2
+    print('*' * mitta)
+    for i in args:
+        x = ' '
+        spaces = mitta - len(i) - 2
+        print('*'+i+(spaces*x)+'*')
+    print('*' * mitta)
+
+kyltintekija('foo','bar','bazooka', 'foobarbazspam')
+
+ascii dance:
+
+import time
+def kadetylos():
+    print('\n'*30)
+    print('\o/')
+    print(' |')
+    print('/ \\')
+    time.sleep(1)
+def kadetsivulle():
+    print('\n'*30)
+    print('_o_')
+    print(' |')
+    print('/ \\')
+    time.sleep(1)
+def kadetalas():
+    print('\n'*30)
+    print(' o')
+    print('/|\\')
+    print('/ \\')
+    time.sleep(1)
+def sivuprofiilioikea():
+    print('\n'*30)
+    print(' o/')
+    print(' |')
+    print(' |\\')
+    time.sleep(1)
+def sivuprofiilivasen():
+    print('\n'*30)
+    print('\o')
+    print(' |')
+    print('/|')
+    time.sleep(1)
+
+while True:
+    kadetylos()
+    kadetsivulle()
+    kadetalas()
+    sivuprofiilioikea()
+    sivuprofiilivasen()
+
 """
-
-
-
-
-
-
 
